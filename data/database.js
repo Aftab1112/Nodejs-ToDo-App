@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 export const connectToMongoDB = async () => {
   try {
     await mongoose.connect(process.env.MONGO_URI, { dbName: "BackendAPI" });
-    console.log("Connected to MongoDb");
+    console.log(`Database connected with ${mongoose.connection.host}`);
   } catch (err) {
     console.log(err);
   }
